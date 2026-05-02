@@ -1,0 +1,311 @@
+/* 
+   Solid Core Bricks - Custom Stylesheet
+   Theme: Industrial Premium, Strong, Modern
+*/
+
+:root {
+    --primary-brand: #c04000;      /* Terracotta/Brick Red */
+    --primary-hover: #a33600;
+    --light-brand: rgba(192, 64, 0, 0.1);
+    --dark-bg: #1a1a1a;
+    --dark-secondary: #2d3436;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+html, body {
+    font-family: var(--font-body);
+    color: #333;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: var(--font-heading);
+}
+
+.text-primary-brand {
+    color: var(--primary-brand) !important;
+}
+
+.bg-primary-brand {
+    background-color: var(--primary-brand) !important;
+}
+
+.bg-light-brand {
+    background-color: var(--light-brand) !important;
+}
+
+.btn-brand {
+    background-color: var(--primary-brand);
+    color: white;
+    border: 2px solid var(--primary-brand);
+    transition: all 0.3s ease;
+}
+
+.btn-brand:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(192, 64, 0, 0.2);
+}
+
+.btn-outline-brand {
+    color: var(--primary-brand);
+    border: 2px solid var(--primary-brand);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-brand:hover {
+    background-color: var(--primary-brand);
+    color: white;
+}
+
+.letter-spacing-1 {
+    letter-spacing: 1.5px;
+}
+
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.max-w-700 {
+    max-width: 700px;
+}
+
+.transition-all {
+    transition: all 0.4s ease;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-brand) 0%, #ff7b00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(192, 64, 0, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(192, 64, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(192, 64, 0, 0); }
+}
+
+/* Navbar Scrolled State */
+.navbar.scrolled {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8);
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: #fff;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-brand);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    z-index: 0;
+    animation: slowZoom 25s infinite alternate;
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(15, 15, 15, 0.9) 0%, rgba(15, 15, 15, 0.6) 50%, rgba(15, 15, 15, 0.3) 100%);
+    z-index: 0;
+}
+
+.hero-shape-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.hero-shape-bottom svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Feature Cards */
+.transition-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Projects Cards */
+.project-card {
+    height: 400px;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.overlay-gradient {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe57;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Footer Links */
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-brand);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .hero-bg {
+        background-attachment: scroll !important; /* Fix for mobile responsive bug */
+        animation: none; /* Disable zoom on mobile for performance */
+    }
+    
+    .hero-section {
+        min-height: auto;
+        padding: 150px 0 100px;
+    }
+    
+    .navbar-collapse {
+        background-color: var(--dark-bg);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}
+
+/* Scrolling Marquee */
+.scrolling-marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scrolling-marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 1.1rem;
+}
+
+.scrolling-marquee-content span {
+    margin: 0 15px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
