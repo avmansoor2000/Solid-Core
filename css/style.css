@@ -4,7 +4,8 @@
 */
 
 :root {
-    --primary-brand: #c04000;      /* Terracotta/Brick Red */
+    --primary-brand: #c04000;
+    /* Terracotta/Brick Red */
     --primary-hover: #a33600;
     --light-brand: rgba(192, 64, 0, 0.1);
     --dark-bg: #1a1a1a;
@@ -13,14 +14,21 @@
     --font-body: 'Inter', sans-serif;
 }
 
-html, body {
+html,
+body {
     font-family: var(--font-body);
     color: #333;
     overflow-x: hidden;
     width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-brand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
     font-family: var(--font-heading);
 }
 
@@ -72,7 +80,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 .z-index-1 {
-    z-index: 1;
+    z-index: 10;
 }
 
 .max-w-700 {
@@ -95,9 +103,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .pulse-glow {
@@ -105,27 +121,36 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 @keyframes pulseGlow {
-    0% { box-shadow: 0 0 0 0 rgba(192, 64, 0, 0.5); }
-    70% { box-shadow: 0 0 0 15px rgba(192, 64, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(192, 64, 0, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(192, 64, 0, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(192, 64, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(192, 64, 0, 0);
+    }
 }
 
 /* Navbar Scrolled State */
 .navbar.scrolled {
     background-color: rgba(26, 26, 26, 0.95) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .navbar-nav .nav-link {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin: 0 10px;
     position: relative;
 }
 
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
     color: #fff;
 }
 
@@ -140,14 +165,17 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     transition: width 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link.active::after {
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
     width: 100%;
 }
 
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 140px;
+    padding-bottom: calc(120px + 10vw);
+    /* overflow: hidden; */
 }
 
 .hero-bg {
@@ -158,17 +186,21 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax effect */
     z-index: 0;
-    animation: slowZoom 25s infinite alternate;
+    /* animation: slowZoom 25s infinite alternate; */
 }
 
-@keyframes slowZoom {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.15); }
-}
+/* @keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
 
-.hero-overlay {
+    100% {
+        transform: scale(1.15);
+    }
+} */
+
+/* .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -176,21 +208,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 100%;
     background: linear-gradient(90deg, rgba(15, 15, 15, 0.9) 0%, rgba(15, 15, 15, 0.6) 50%, rgba(15, 15, 15, 0.3) 100%);
     z-index: 0;
-}
+} */
 
-.hero-shape-bottom {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-.hero-shape-bottom svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
 
 /* Feature Cards */
 .transition-hover {
@@ -199,7 +218,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Projects Cards */
@@ -219,7 +238,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 .overlay-gradient {
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
 }
 
 /* Floating WhatsApp Button */
@@ -263,22 +282,24 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
     .hero-bg {
-        background-attachment: scroll !important; /* Fix for mobile responsive bug */
-        animation: none; /* Disable zoom on mobile for performance */
+        background-attachment: scroll !important;
+        /* Fix for mobile responsive bug */
+        animation: none;
+        /* Disable zoom on mobile for performance */
     }
-    
+
     .hero-section {
         min-height: auto;
         padding: 150px 0 100px;
     }
-    
+
     .navbar-collapse {
         background-color: var(--dark-bg);
         padding: 20px;
         border-radius: 10px;
         margin-top: 15px;
     }
-    
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -286,26 +307,4 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
         height: 50px;
         font-size: 25px;
     }
-}
-
-/* Scrolling Marquee */
-.scrolling-marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.scrolling-marquee-content {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-    font-size: 1.1rem;
-}
-
-.scrolling-marquee-content span {
-    margin: 0 15px;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
 }
